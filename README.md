@@ -4,7 +4,7 @@
 
 </div>
 
-# FBD PS2 ChipSlayer
+# PS2 ChipSlayer
 
 ## Introduction
 
