@@ -10,7 +10,7 @@ ChipSlayer remains an experimental hardware project under active development.
 
 ---
 
-# Testing Goals
+## Testing Goals
 
 The primary goals of testing are:
 
@@ -24,7 +24,7 @@ The primary goals of testing are:
 
 ---
 
-# Testing Philosophy
+## Testing Philosophy
 
 Testing focuses on real hardware behavior rather than purely theoretical operation.
 
@@ -41,9 +41,9 @@ The project emphasizes observing how the console behaves under actual installati
 
 ---
 
-# Primary Areas of Validation
+## Primary Areas of Validation
 
-## Boot Stability
+### Boot Stability
 
 One of the most important testing categories is determining whether the console consistently boots with:
 
@@ -52,9 +52,7 @@ One of the most important testing categories is determining whether the console 
 - the modchip active
 - the modchip isolated
 
----
-
-## Reset-Line Behavior
+### Reset-Line Behavior
 
 Special attention is given to reset-line behavior because:
 
@@ -63,9 +61,7 @@ Special attention is given to reset-line behavior because:
 - loading conditions can affect startup timing
 - some modchips influence the reset line even when partially disabled
 
----
-
-## High-Impedance Characteristics
+### High-Impedance Characteristics
 
 Testing attempts to verify that the switching circuitry presents minimal electrical influence when inactive.
 
@@ -77,13 +73,12 @@ Areas of interest include:
 - line loading
 - startup state behavior
 
----
-
-## Ground Isolation Behavior
+### Ground Isolation Behavior
 
 Some revisions include experiments involving selective modchip ground isolation.
 
 Testing focuses on whether:
+
 - console behavior changes
 - startup behavior improves
 - unwanted interaction is reduced
@@ -92,7 +87,7 @@ Results may vary significantly depending on the installation.
 
 ---
 
-# Current Testing Platforms
+## Current Testing Platforms
 
 Testing has primarily focused on:
 
@@ -105,7 +100,7 @@ Testing has primarily focused on:
 
 ---
 
-# Modchip Testing
+## Modchip Testing
 
 Current testing has mainly involved:
 
@@ -118,9 +113,9 @@ Additional modchip testing may occur later.
 
 ---
 
-# Validation Methods
+## Validation Methods
 
-## Repeated Boot Cycling
+### Repeated Boot Cycling
 
 Repeated cold and warm boot testing is used to evaluate consistency.
 
@@ -132,9 +127,7 @@ Typical testing includes:
 - multiple consecutive startups
 - standby-to-power transitions
 
----
-
-## Comparative Testing
+### Comparative Testing
 
 Behavior is often compared between:
 
@@ -145,9 +138,7 @@ Behavior is often compared between:
 | Different resistor values | Different loading behavior |
 | Different console revisions | Different startup behavior |
 
----
-
-## Oscilloscope Analysis
+### Oscilloscope Analysis
 
 Scope captures may be used to observe:
 
@@ -158,9 +149,7 @@ Scope captures may be used to observe:
 - switching characteristics
 - noise and ringing
 
----
-
-## Long-Duration Operation
+### Long-Duration Operation
 
 Some testing includes:
 
@@ -171,60 +160,54 @@ Some testing includes:
 
 ---
 
-# Example Testing Categories
+## Example Testing Categories
 
-## Category 1 — Startup Validation
+### Category 1 — Startup Validation
 
-### Purpose
+#### Purpose
 
 Verify the console consistently boots.
 
-### Typical Tests
+#### Typical Tests
 
 - cold boot
 - warm boot
 - rapid reboot
 - modchip enabled/disabled switching
 
----
+### Category 2 — Signal Integrity
 
-## Category 2 — Signal Integrity
-
-### Purpose
+#### Purpose
 
 Evaluate electrical behavior of the switching circuitry.
 
-### Typical Tests
+#### Typical Tests
 
 - leakage observation
 - pull-up interaction
 - reset-line behavior
 - startup timing analysis
 
----
+### Category 3 — Cross-Revision Testing
 
-## Category 3 — Cross-Revision Testing
-
-### Purpose
+#### Purpose
 
 Determine whether behavior changes between motherboard revisions.
 
-### Typical Focus Areas
+#### Typical Focus Areas
 
 - startup reliability
 - reset sensitivity
 - wiring tolerance
 - modchip interaction differences
 
----
+### Category 4 — Installation Variation Testing
 
-## Category 4 — Installation Variation Testing
-
-### Purpose
+#### Purpose
 
 Observe how physical installation changes behavior.
 
-### Variables
+#### Variables
 
 - wire length
 - routing
@@ -234,7 +217,7 @@ Observe how physical installation changes behavior.
 
 ---
 
-# Prototype Revision Testing
+## Prototype Revision Testing
 
 Each hardware revision may be tested independently.
 
@@ -251,7 +234,7 @@ Revision naming may evolve over time.
 
 ---
 
-# Observed Behaviors
+## Observed Behaviors
 
 Some observed behaviors during development include:
 
@@ -266,35 +249,27 @@ Not all consoles behave identically.
 
 ---
 
-# Important Findings
+## Important Findings
 
-Several important trends have emerged during development:
-
-## Reset-Line Loading Matters
+### Reset-Line Loading Matters
 
 Even small electrical loads may influence startup behavior on some consoles.
 
----
-
-## Different Motherboards Behave Differently
+### Different Motherboards Behave Differently
 
 Two consoles with similar model numbers may behave differently.
 
----
-
-## Wiring Quality Is Critical
+### Wiring Quality Is Critical
 
 Poor soldering or routing may introduce instability that appears unrelated to ChipSlayer itself.
 
----
-
-## Modchip Interaction Is Complex
+### Modchip Interaction Is Complex
 
 Some modchips continue interacting with the console through unintended paths even when partially disabled.
 
 ---
 
-# Test Documentation
+## Test Documentation
 
 Testing records may include:
 
@@ -308,9 +283,96 @@ Testing records may include:
 
 These may be stored in:
 
-```text
-Test-Data/
-├── Console-Test-Logs/
-├── Scope-Captures/
-├── PS2Ident-Reports/
-└── Boot-Behavior-Notes/
+    Test-Data/
+    ├── Console-Test-Logs/
+    ├── Scope-Captures/
+    ├── PS2Ident-Reports/
+    └── Boot-Behavior-Notes/
+
+---
+
+## PS2Ident Validation
+
+PS2Ident logs may be collected to compare console behavior under different conditions.
+
+Example testing may include:
+
+- modchip enabled
+- modchip disabled
+- ChipSlayer active
+- ChipSlayer bypassed
+
+These comparisons may help identify behavioral differences during startup and initialization.
+
+Example reference logs may be stored in:
+
+    Test-Data/
+    └── PS2Ident-Reports/
+
+Suggested file naming examples:
+
+| File Name | Purpose |
+|---|---|
+| `SCPH-70012-ModBo-On.txt` | Console report with modchip enabled |
+| `SCPH-70012-ModBo-Off.txt` | Console report with modchip disabled |
+| `SCPH-70012-ChipSlayer-Enabled.txt` | Console report with ChipSlayer enabled |
+| `SCPH-70012-ChipSlayer-Bypassed.txt` | Console report with ChipSlayer bypassed |
+
+---
+
+## Known Testing Limitations
+
+Current limitations include:
+
+- incomplete motherboard coverage
+- limited Deckard testing
+- limited modchip variety
+- prototype-only hardware revisions
+- evolving installation methods
+
+Additional validation is ongoing.
+
+---
+
+## Community Testing
+
+Community testing may eventually help broaden compatibility data.
+
+However:
+
+- unofficial testing may vary widely
+- installation quality strongly affects results
+- observed behavior may not always be reproducible
+
+All unofficial results should be treated as informational unless independently verified.
+
+---
+
+## Future Validation Goals
+
+Future testing may include:
+
+- additional motherboard revisions
+- alternate switching architectures
+- thermal behavior analysis
+- expanded modchip support
+- production-board validation
+- automated test procedures
+
+---
+
+## Final Notes
+
+ChipSlayer development is heavily driven by real-world testing and observation.
+
+Testing and validation remain ongoing as new hardware revisions, installation methods, and console behaviors are explored.
+
+---
+
+## Disclaimer
+
+This project is experimental.
+
+No guarantees are provided regarding compatibility, stability, or behavior across all PlayStation 2 hardware revisions.
+
+Use at your own risk.
