@@ -367,3 +367,11 @@ Additional contributors, testers, and collaborators may be credited throughout t
 ChipSlayer is as much a research and documentation effort as it is a hardware project.
 
 The long-term goal is to better understand how PlayStation 2 modchips interact with console hardware and to develop cleaner, more controlled methods of managing that interaction.
+
+## AI Assistance and Attribution Disclaimer
+
+This project uses AI tools to help with writing, organization, documentation, research, code examples, and design planning. While I review and edit the information, some details may still be incorrect, incomplete, or outdated.
+
+Not all ideas, code, research, methods, or technical information in this project should be credited only to me. This project may reference, build on, or be inspired by community knowledge, open-source projects, datasheets, forum posts, Discord discussions, manufacturer documentation, and the work of other developers and modders.
+
+Credit will be given whenever a source is known. If something is missing credit or needs correction, please let me know so I can update the documentation.
