@@ -30,7 +30,7 @@ This repository serves as the primary:
 
 for the ChipSlayer project.
 
-<img src="Images/FBD-PS2-ChipSlayer-Logo.png" width="500"> <img src="Images/FBD-PS2-ChipSlayer-Logo.png" width="500">
+<img src="Images/FBD-PS2-ChipSlayer-Logo.png" width="500"> <img src="Images/Board-Photos/FBD-PS2-ChipSlayer-BoardRender-Backt01.png" width="500">
 ---
 
 # Project Status
