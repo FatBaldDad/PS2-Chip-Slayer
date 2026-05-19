@@ -32,7 +32,7 @@ for the ChipSlayer project.
 
 <img src="Images/Board-Photos/FBD-PS2-ChipSlayer-BoardRender-Front01.png" width="500"> <img src="Images/Board-Photos/FBD-PS2-ChipSlayer-BoardRender-Backt01.png" width="500">
 
-<img src="Images/Install-Examples/FBD-PS2-ChipSlayer-Installed.png" width="500">
+<img src="Images/Install-Examples/FBD-PS2-ChipSlayer-Installed.png" width="200">
 ---
 
 # Project Status
