@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="Images/FBD-PS2-ChipSlayer-Logo.png" width="500">
+<img src="Images/Logos/FBD-PS2-ChipSlayer-Logo.png" width="500">
 
 </div>
 
