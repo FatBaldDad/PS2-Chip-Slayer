@@ -1,3 +1,9 @@
+<div align="center">
+
+<img src="Images/Logos/FBD-PS2-ChipSlayer-Logo.png" width="500">
+
+</div>
+
 # PS2-Chip-Slayer
 
 > [!IMPORTANT]
